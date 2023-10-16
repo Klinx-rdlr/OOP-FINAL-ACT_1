@@ -1,3 +1,5 @@
+package javaTutorial;
+
 import java.util.Scanner;
 
 public class Activity1LABRiboReyes {
@@ -46,9 +48,15 @@ public class Activity1LABRiboReyes {
 
             String targetValue = baseConverter.convertToTargetBase();
             System.out.println("Target Base Conversion Result: " + targetValue);
+            
+            
+            String tryAgain;
+            do {
+                System.out.print("Try Again? [Y/N] ");
+                tryAgain = getInput.nextLine();
+            } while (!tryAgain.equalsIgnoreCase("Y") && !tryAgain.equalsIgnoreCase("N"));
 
-            System.out.print("Try Again? [Y/N] ");
-            if(getInput.nextLine().equalsIgnoreCase("N")){
+            if (tryAgain.equalsIgnoreCase("N")) {
                 checker = false;
             }
         }
