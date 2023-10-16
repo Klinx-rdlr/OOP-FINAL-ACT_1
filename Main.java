@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class Main {
@@ -11,9 +10,9 @@ public class Main {
             sourceBase = getInput.nextLine();
 
             int Base;
-            if (sourceBase.equals("B8")) {
+            if (sourceBase.equalsIgnoreCase("B8")) {
                 Base = 8;
-            } else if (sourceBase.equals("B16")) {
+            } else if (sourceBase.equalsIgnoreCase("B16")) {
                 Base = 16;
             } else {
                 System.out.println("Invalid source base.");
@@ -32,9 +31,9 @@ public class Main {
             sourceBase_2 = getInput.nextLine();
 
             int targetBase;
-            if (sourceBase_2.equals("B12")) {
+            if (sourceBase_2.equalsIgnoreCase("B12")) {
                 targetBase = 12;
-            } else if (sourceBase_2.equals("B14")) {
+            } else if (sourceBase_2.equalsIgnoreCase("B14")) {
                 targetBase = 14;
             } else {
                 System.out.println("Invalid target base.");
@@ -47,7 +46,7 @@ public class Main {
             System.out.println("Target Base Conversion Result: " + targetValue);
 
             System.out.println("Try Again? [Y/N]");
-            if(getInput.nextLine().equals("N")){
+            if(getInput.nextLine().equalsIgnoreCase("N")){
                 checker = false;
             }
         }
@@ -71,10 +70,10 @@ class Decimal {
 
             if (Character.isLetter(digit)) {
                 int num = (int) (digit - 'A') + 10;
-                decimalValue += num * Math.pow(sourceBase, power);
+                decimalValue += (int) (num * Math.pow(sourceBase, power));
             } else {
                 int num = Integer.parseInt(String.valueOf(digit));
-                decimalValue += num * Math.pow(sourceBase, power);
+                decimalValue += (int) (num * Math.pow(sourceBase, power));
             }
 
             power++;
