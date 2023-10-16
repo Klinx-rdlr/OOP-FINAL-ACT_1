@@ -1,12 +1,14 @@
 import java.util.Scanner;
 
-public class Main {
-    public static void main(String[] args) {
-        Scanner getInput = new Scanner(System.in);
+public class Activity1LABRiboReyes {
+
+	public static void main(String[] args) {
+		
+		Scanner getInput = new Scanner(System.in);
         boolean checker = true;
         while(checker) {
             String option, sourceBase, sourceBase_2, sourceValue;
-            System.out.println("Enter Source Base(B8, B16)    :");
+            System.out.print("Enter Source Base(B8, B16)    :");
             sourceBase = getInput.nextLine();
 
             int Base;
@@ -19,15 +21,15 @@ public class Main {
                 continue;
             }
 
-            System.out.println("Enter Source Value:     ");
+            System.out.print("Enter Source Value    : ");
             sourceValue = getInput.nextLine();
             Decimal num = new Decimal(sourceValue);
 
             int decimalValue = num.toDecimal(Base);
-            System.out.println("Decimal Conversion Result: " + decimalValue);
+            System.out.println("Decimal Conversion Result    : " + decimalValue);
 
 
-            System.out.println("Enter Convert-to-base (B12, B14):    ");
+            System.out.print("Enter Convert-to-base (B12, B14)    :    ");
             sourceBase_2 = getInput.nextLine();
 
             int targetBase;
@@ -45,7 +47,7 @@ public class Main {
             String targetValue = baseConverter.convertToTargetBase();
             System.out.println("Target Base Conversion Result: " + targetValue);
 
-            System.out.println("Try Again? [Y/N]");
+            System.out.print("Try Again? [Y/N] ");
             if(getInput.nextLine().equalsIgnoreCase("N")){
                 checker = false;
             }
